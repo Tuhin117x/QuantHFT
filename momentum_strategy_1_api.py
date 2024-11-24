@@ -13,14 +13,14 @@ def momentum_strategy_1(date_delim):
 		ScripName = nifty_master['Name'].values.tolist()
 
 
-		new_path='MarketData\\DailyData'
-		new_path=new_path+'\\'+str(ScripCode[0])+'.csv'
+		new_path='MarketData/DailyData'
+		new_path=new_path+'/'+str(ScripCode[0])+'.csv'
 		market_data = pd.read_csv(new_path)
 		#print(market_data)
 
 		for code in ScripCode:
-			new_path='MarketData\\DailyData'
-			new_path=new_path+'\\'+str(code)+'.csv'
+			new_path='MarketData/DailyData'
+			new_path=new_path+'/'+str(code)+'.csv'
 			additional_market_data=pd.read_csv(new_path)
 			#market_data=market_data.append(additional_market_data)
 			market_data=pd.concat([market_data, additional_market_data])
