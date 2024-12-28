@@ -7,6 +7,11 @@ from api.momentum_2 import *
 st.sidebar.image("logo.jpg")
 
 st.sidebar.write('--------------')
+st.sidebar.subheader('Navigation Bar')
+st.sidebar.page_link("open_hft_frontend.py", label="Quant Strategies", icon="🏠")
+st.sidebar.page_link("pages/intraday_forecasts.py", label="Intraday ML Forecasts", icon="⛅")
+st.sidebar.page_link("pages/backtests.py", label="Backtesting Module", icon="📠")
+st.sidebar.write('🍵 Data Last Refreshed On ' )
 
 strategies=['Momentum Strategy - Type 1','Momentum Strategy - Type 2']
 # Add a selectbox to the sidebar:
