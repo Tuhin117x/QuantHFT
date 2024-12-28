@@ -8,7 +8,7 @@ st.sidebar.image("logo.jpg")
 
 st.sidebar.write('--------------')
 st.sidebar.subheader('Navigation Bar')
-st.sidebar.page_link("open_hft_frontend.py", label="Quant Strategies", icon="🏠")
+st.sidebar.page_link("streamlit_app.py", label="Quant Strategies", icon="🏠")
 st.sidebar.page_link("pages/intraday_forecasts.py", label="Intraday ML Forecasts", icon="⛅")
 st.sidebar.page_link("pages/backtests.py", label="Backtesting Module", icon="📠")
 st.sidebar.write('🍵 Data Last Refreshed On ' )
