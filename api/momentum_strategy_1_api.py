@@ -12,9 +12,9 @@ from scipy.stats import percentileofscore
 #SET-UP ALL PATH VARIABLES
 #--------------------------------------------------------------------
 
-nifty_master_path='D:\\Raid Array\\Array 2\\3. OpenHFT\\Project\\NiftyMaster\\Nifty_Master.csv'
-temp_path='D:\\Raid Array\\Array 2\\3. OpenHFT\\MarketData\\DailyData'
-new_path='D:\\Raid Array\\Array 2\\3. OpenHFT\\MarketData\\DailyData'
+nifty_master_path='marketdata/Nifty_Master.csv'
+temp_path='marketdata/dailydata'
+new_path='marketdata/dailydata'
 
 
 #--------------------------------------------------------------------

@@ -1,3 +1,4 @@
 streamlit
 arrow
 scipy
+plotly
