@@ -8,13 +8,6 @@ from datetime import datetime, timedelta
 import arrow
 from scipy.stats import percentileofscore
 
-#--------------------------------------------------------------------
-#SET-UP ALL PATH VARIABLES
-#--------------------------------------------------------------------
-
-nifty_master_path='marketdata/Nifty_Master.csv'
-temp_path='marketdata/dailydata'
-new_path='marketdata/dailydata'
 
 
 #--------------------------------------------------------------------
@@ -22,6 +15,16 @@ new_path='marketdata/dailydata'
 #--------------------------------------------------------------------
 
 def momentum_strategy_1(date_delim):
+
+
+		#--------------------------------------------------------------------
+		#SET-UP ALL PATH VARIABLES
+		#--------------------------------------------------------------------
+
+		nifty_master_path='marketdata/Nifty_Master.csv'
+		temp_path='marketdata/dailydata'
+		new_path='marketdata/dailydata'
+
 		
 		#--------------------------------------------------------------------
 		#READ MASTER FILE TO GET ALL SCRIP NAMES
