@@ -26,7 +26,7 @@ def data_snapshot_date():
 	nifty_master = pd.read_csv(nifty_master_path)
 	ScripCode = nifty_master['ScripCode'].values.tolist()
 	ScripName = nifty_master['Name'].values.tolist()
-	new_path=new_path+'\\'+str(ScripCode[0])+'.csv'
+	new_path=new_path+'/'+str(ScripCode[0])+'.csv'
 	market_data = pd.read_csv(new_path)
 	timestamp_string=market_data['Datetime'].max()
 	format_string = "%Y-%m-%dT%H:%M:%S"

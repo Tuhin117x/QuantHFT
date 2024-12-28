@@ -36,13 +36,13 @@ def momentum_strategy_1(date_delim):
 		#--------------------------------------------------------------------
 		#READ SCRIP WISE DAILY MARKET DATA
 		#--------------------------------------------------------------------	
-		new_path=new_path+'\\'+str(ScripCode[0])+'.csv'
+		new_path=new_path+'/'+str(ScripCode[0])+'.csv'
 		market_data = pd.read_csv(new_path)
 		#print(market_data)
 
 		for code in ScripCode:
 			new_path=temp_path
-			new_path=new_path+'\\'+str(code)+'.csv'
+			new_path=new_path+'/'+str(code)+'.csv'
 			additional_market_data=pd.read_csv(new_path)
 			market_data=pd.concat([market_data, additional_market_data])
 
