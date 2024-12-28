@@ -49,12 +49,12 @@ def momentum_strategy_1(date_delim):
 		#--------------------------------------------------------------------
 		#LEGACY CODE FOR GETTING CURRENT DATE USING MAX DATE IN DATASET
 		#--------------------------------------------------------------------			
-		#timestamp_string=market_data['Datetime'].max()
-		#format_string = "%Y-%m-%dT%H:%M:%S"
-		#datetime_object = datetime.strptime(timestamp_string, format_string)
-		#date_obj = datetime_object.date()
-		#current_date=date_obj
-		#current_date=str(current_date)
+		timestamp_string=market_data['Datetime'].max()
+		format_string = "%Y-%m-%dT%H:%M:%S"
+		datetime_object = datetime.strptime(timestamp_string, format_string)
+		date_obj = datetime_object.date()
+		current_date=date_obj
+		current_date=str(current_date)
 		
 
 		#--------------------------------------------------------------------
