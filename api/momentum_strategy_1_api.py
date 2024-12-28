@@ -75,7 +75,7 @@ def momentum_strategy_1(date_delim):
 		date_match_flag_pre=0
 
 		for date in available_dates_pre_check:
-			if str(date)==date_delim:
+			if str(date)==str(date_delim):
 				date_match_flag_pre=1
 		
 		#--------------------------------------------------------------------
@@ -193,10 +193,11 @@ def momentum_strategy_1(date_delim):
 		
 		market_data_sanitized=market_data[['Datetime','Open','ScripName','ScripCode']]
 		market_data_sanitized=market_data_sanitized.drop_duplicates()
-		market_data_sanitized['Datetime']=pd.to_datetime(market_data_sanitized['Datetime'], format=format_string)
-		
+		#market_data_sanitized['Datetime']=pd.to_datetime(market_data_sanitized['Datetime'], format=format_string)
+		market_data_sanitized['Datetime'] = market_data_sanitized['Datetime'].apply(lambda x: datetime.strptime(x,format_string).date())
 
-		market_data_current=market_data_sanitized[market_data_sanitized['Datetime']==str(current_date_dtobj)]
+		#market_data_current=market_data_sanitized[market_data_sanitized['Datetime']==str(current_date_dtobj)]
+		market_data_current=market_data_sanitized[market_data_sanitized['Datetime']==(current_date_dtobj)]
 		market_data_current.columns = ['Current_Datetime', 'Current_Price', 'ScripName','ScripCode']
 		
 		#---------------------------------------------------------
@@ -204,19 +205,23 @@ def momentum_strategy_1(date_delim):
 		# Filter for columns - Date, Open, ScripName and ScripCode
 		#---------------------------------------------------------
 
-		market_data_r1y=market_data_sanitized[market_data_sanitized['Datetime']==str(r1y_date_dtobj)]
+		#market_data_r1y=market_data_sanitized[market_data_sanitized['Datetime']==str(r1y_date_dtobj)]
+		market_data_r1y=market_data_sanitized[market_data_sanitized['Datetime']==(r1y_date_dtobj)]
 		market_data_r1y.columns = ['R1Y_Datetime', 'R1Y_Price', 'ScripName','ScripCode']
 		
-		market_data_r6m=market_data_sanitized[market_data_sanitized['Datetime']==str(r6m_date_dtobj)]
+		#market_data_r6m=market_data_sanitized[market_data_sanitized['Datetime']==str(r6m_date_dtobj)]
+		market_data_r6m=market_data_sanitized[market_data_sanitized['Datetime']==(r6m_date_dtobj)]
 		market_data_r6m.columns = ['R6M_Datetime', 'R6M_Price', 'ScripName','ScripCode']
 		market_data_r6m=market_data_r6m[['R6M_Datetime', 'R6M_Price', 'ScripCode']]
 		
 
-		market_data_r3m=market_data_sanitized[market_data_sanitized['Datetime']==str(r3m_date_dtobj)]
+		#market_data_r3m=market_data_sanitized[market_data_sanitized['Datetime']==str(r3m_date_dtobj)]
+		market_data_r3m=market_data_sanitized[market_data_sanitized['Datetime']==(r3m_date_dtobj)]
 		market_data_r3m.columns = ['R3M_Datetime', 'R3M_Price', 'ScripName','ScripCode']
 		market_data_r3m=market_data_r3m[['R3M_Datetime', 'R3M_Price', 'ScripCode']]
 		
-		market_data_r1m=market_data_sanitized[market_data_sanitized['Datetime']==str(r1m_date_dtobj)]
+		#market_data_r1m=market_data_sanitized[market_data_sanitized['Datetime']==str(r1m_date_dtobj)]
+		market_data_r1m=market_data_sanitized[market_data_sanitized['Datetime']==(r1m_date_dtobj)]
 		market_data_r1m.columns = ['R1M_Datetime', 'R1M_Price', 'ScripName','ScripCode']
 		market_data_r1m=market_data_r1m[['R1M_Datetime', 'R1M_Price', 'ScripCode']]
 		
