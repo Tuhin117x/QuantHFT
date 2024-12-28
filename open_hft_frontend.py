@@ -61,7 +61,8 @@ strategy_selectbox_side = st.sidebar.selectbox('Select your Quant Strategy', (st
 
 if (strategy_selectbox_side==strategies[0]):
   'Below are the stock recommendations for ', strategy_selectbox_side
-  df1=momentum_strategy_1(data_snapshot_date())
+  df1=momentum_strategy_1(str(data_snapshot_date()))
+  print(df1)
   st.dataframe(df1,hide_index=True,
     column_config=dict(
       R1Y_return=st.column_config.NumberColumn('R1Y Return', format='%.2f %%'),
