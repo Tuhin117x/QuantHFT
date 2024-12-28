@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 from momentum_strategy_1_api import *
+from api.momentum_2 import *
 
 st.sidebar.image("logo.jpg")
 
@@ -11,6 +12,8 @@ strategies=['Momentum Strategy - Type 1','Momentum Strategy - Type 2']
 # Add a selectbox to the sidebar:
 strategy_selectbox_side = st.sidebar.selectbox('Select your Quant Strategy', (strategies))
 df1=momentum_strategy_1('2024-11-21')
+df2=strategy()
+st.dataframe(df2)
 st.write("Data Refresh Date: "+datetime.today().strftime('%Y-%m-%d'))
 'Below are the stock recommendations for ', strategy_selectbox_side
 st.dataframe(df1,hide_index=True,
